@@ -1,0 +1,31 @@
+{
+    "bots":{
+        "footer":"Tedoa was here?",
+        "VoiceChannel":"Bot sesli kanal ID",
+        "status":"Tedoa 🖤 Github"
+    },
+
+    "roles":{
+      "register":["Register Rol ID"],
+      "maleRoles":["Erkek Rol 1","Erkek Rol 2"],
+      "erkek1":"İsimlerde gözükücek erkek rolü",
+      "femaleRoles":["Kadın Rol 1","Kadın Rol 2"],
+      "kadın1":"İsimlerde gözükücek kadın rolü",
+      "unregisteres":"Unregister Rolü ID",
+      "vip":"Vip Rol ID",
+      "booster":"Booster Rol ID"  
+    },
+
+    "giriş":{
+      "isim":"• İsim | Yaş",
+      "hoşgeldinKanal":"Hoşgeldin kanalı",
+      "kurallar":"Kurallar kanalı",
+      "SunucuAdı":"Sunucu Adı"
+    },
+
+    "taglar":{
+      "taglı":"Taglı kayıt edildiğinde başına gelicek tag",
+      "tagsız":"Tagsız kayıt edildiğinde başına gelicek tag",
+      "tag":"Sunucu Tagınız"
+    }
+}
