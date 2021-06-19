@@ -48,7 +48,7 @@ await message.guild.members.cache.get(member.id).setNickname(`${taglı} ${isim} 
 const tedoa = new MessageEmbed()
 .setAuthor(message.guild.name, message.guild.iconURL({ dynamic: true }))
 .setColor('BLACK')
-.setDescription(`${member} üyesi Başarıyla <@&${config.roles.erkek1}> Olarak  Kayıt Edildi ${emoji.tedoa}
+.setDescription(`${member} üyesi Başarıyla <@&${config.roles.kadın1}> Olarak  Kayıt Edildi ${emoji.tedoa}
 Tüm isim geçmişine ${ayarlar.prefix}isimler \`@${member.user.username}\` ile bakmanız önerilir. `)
 message.channel.send(tedoa)
 message.react(emoji.onayemoji)
@@ -58,7 +58,7 @@ await message.guild.members.cache.get(member.id).setNickname(`${tagsız} ${isim}
 const tedoa = new MessageEmbed()
 .setAuthor(message.guild.name, message.guild.iconURL({ dynamic: true }))
 .setColor('BLACK')
-.setDescription(`${member} üyesi Başarıyla <@&${config.roles.erkek1}> Olarak  Kayıt Edildi
+.setDescription(`${member} üyesi Başarıyla <@&${config.roles.kadın1}> Olarak  Kayıt Edildi
 Tüm isim geçmişine ${ayarlar.prefix}isimler \`@${member.user.username}\` ile bakmanız önerilir. `)
 message.channel.send(tedoa)
 message.react(emoji.onayemoji)
