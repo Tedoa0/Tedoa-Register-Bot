@@ -13,8 +13,7 @@ if (!config.roles.register.some(role => message.member.roles.cache.get(role)) &&
 return message.channel.send(embed.setDescription(`${message.author} Bu komutu kullanabilmek için yeterli yetkin yok!`)).then(tedoa => tedoa.delete({timeout : 5000})).then(message.react(emoji.redemoj))
 
 let top =  message.guild.members.cache.filter(uye => kdb.get(`teyit.${uye.id}.${message.guild.id}`)).array().sort((uye1, uye2) => Number(kdb.get(`teyit.${uye2.id}.${message.guild.id}`))-Number(kdb.get(`teyit.${uye1.id}.${message.guild.id}`)))
-.slice(0, 15).map((uye, index) => ` \`${index+1}.\` ${uye} - **${kdb.get(`teyit.${uye.id}.${message.guild.id}`)}** kayıt `).join('\n')
-
+.slice(0, 15).map((uye, index) => ` \`${index+1}.\` ${uye} - **${kdb.get(`teyit.${uye.id}.${message.guild.id}`)}** kayıt (**${kdb.get(`erkek.${uye.id}.${message.guild.id}`) || "0"}** erkek **${kdb.get(`kadın.${uye.id}.${message.guild.id}`) || "0"}** kadın) `).join('\n')
 message.channel.send(embed.setTimestamp().setFooter(message.author.tag+" tarafından istendi!", message.author.avatarURL)
 .setDescription(`
 Tedoa teyit sıralaması;
