@@ -39,6 +39,8 @@ let tagsız = config.taglar.tagsız
 kdb.add(`erkek.${message.author.id}.${message.guild.id}`, +1)
 kdb.add(`teyit.${message.author.id}.${message.guild.id}`, +1)
 kdb.push(`isimler.${member.id}`, `\`${isim} | ${yaş}\` (<@&${config.roles.erkek1}>)`)
+let isimler = kdb.get(`isimler.${member.user.id}`);
+let isimleri = `${isimler.map((data) => `${data}`).join("\n")}`
 
 await message.guild.members.cache.get(member.id).roles.remove(config.roles.unregisteres)
 await message.guild.members.cache.get(member.id).roles.add(config.roles.maleRoles)
@@ -49,8 +51,10 @@ const tedoa = new MessageEmbed()
 .setAuthor(message.guild.name, message.guild.iconURL({ dynamic: true }))
 .setColor('BLACK')
 .setDescription(`${member} üyesi Başarıyla <@&${config.roles.erkek1}> Olarak  Kayıt Edildi ${emoji.tedoa}
-Tüm isim geçmişine ${ayarlar.prefix}isimler \`@${member.user.username}\` ile bakmanız önerilir. `)
-message.channel.send(tedoa)
+
+${isimleri}
+Tüm isim geçmişine ${ayarlar.prefix}isimler \`@${member.user.username}/ID\`  ile bakmanız önerilir. `)
+message.channel.send(tedoa).then(tedoa => tedoa.delete({ timeout : 10000 }))
 message.react(emoji.onayemoji)
 } else {
 
@@ -58,9 +62,11 @@ await message.guild.members.cache.get(member.id).setNickname(`${tagsız} ${isim}
 const tedoa = new MessageEmbed()
 .setAuthor(message.guild.name, message.guild.iconURL({ dynamic: true }))
 .setColor('BLACK')
-.setDescription(`${member} üyesi Başarıyla <@&${config.roles.erkek1}> Olarak  Kayıt Edildi
-Tüm isim geçmişine ${ayarlar.prefix}isimler \`@${member.user.username}\` ile bakmanız önerilir. `)
-message.channel.send(tedoa)
+.setDescription(`${member} üyesi Başarıyla <@&${config.roles.erkek1}> Olarak  Kayıt Edildi ${emoji.tedoa}
+
+${isimleri}
+Tüm isim geçmişine ${ayarlar.prefix}isimler \`@${member.user.username}/ID\`  ile bakmanız önerilir. `)
+message.channel.send(tedoa).then(tedoa => tedoa.delete({ timeout : 10000 }))
 message.react(emoji.onayemoji)
 
 
